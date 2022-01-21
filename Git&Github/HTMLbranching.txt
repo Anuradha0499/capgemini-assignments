@@ -1,0 +1,180 @@
+aborpe@LIN19006294 MINGW64 ~ (master)
+$ mkdir Assignments
+
+aborpe@LIN19006294 MINGW64 ~ (master)
+$ cd Assignments
+
+aborpe@LIN19006294 MINGW64 ~/Assignments (master)
+$ git init
+Initialized empty Git repository in C:/Users/ABORPE/Assignments/.git/
+
+aborpe@LIN19006294 MINGW64 ~/Assignments (master)
+$ git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+
+aborpe@LIN19006294 MINGW64 ~/Assignments (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        README.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+aborpe@LIN19006294 MINGW64 ~/Assignments (master)
+$ git add README.txt
+
+aborpe@LIN19006294 MINGW64 ~/Assignments (master)
+$ git commit -m "create readme text file"
+[master (root-commit) cd8251b] create readme text file
+ Committer: Borpe <anuradha.borpe@capgemini.com>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 2 insertions(+)
+ create mode 100644 README.txt
+
+aborpe@LIN19006294 MINGW64 ~/Assignments (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+aborpe@LIN19006294 MINGW64 ~/Assignments (master)
+$ git log
+commit cd8251b12fe508537fced3fa6a11c62cf6253a5e (HEAD -> master)
+Author: Borpe <anuradha.borpe@capgemini.com>
+Date:   Thu Jan 20 16:18:37 2022 +0530
+
+    create readme text file
+
+aborpe@LIN19006294 MINGW64 ~/Assignments (master)
+$ git checkout -b html-assignments
+Switched to a new branch 'html-assignments'
+
+aborpe@LIN19006294 MINGW64 ~/Assignments (html-assignments)
+$ git commit -m "HTML assignments into html-assignments"
+On branch html-assignments
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        local vcs.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+aborpe@LIN19006294 MINGW64 ~/Assignments (html-assignments)
+$ git checkout master
+Switched to branch 'master'
+M       README.txt
+
+aborpe@LIN19006294 MINGW64 ~/Assignments (master)
+$ git commit -m "changes commited to master branch"
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        local vcs.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+aborpe@LIN19006294 MINGW64 ~/Assignments (master)
+$ git checkout -b css-assignments
+Switched to a new branch 'css-assignments'
+
+aborpe@LIN19006294 MINGW64 ~/Assignments (css-assignments)
+$ git commit -m "commiting changes of css-assignments branch"
+On branch css-assignments
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        local vcs.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+aborpe@LIN19006294 MINGW64 ~/Assignments (css-assignments)
+$ git checkout master
+Switched to branch 'master'
+M       README.txt
+
+aborpe@LIN19006294 MINGW64 ~/Assignments (master)
+$ git checkout html-assignments
+Switched to branch 'html-assignments'
+M       README.txt
+
+aborpe@LIN19006294 MINGW64 ~/Assignments (html-assignments)
+$ git commit -m "commiting changes to html-assignments branch"
+On branch html-assignments
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        local vcs.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+aborpe@LIN19006294 MINGW64 ~/Assignments (html-assignments)
+$ git checkout master
+Switched to branch 'master'
+M       README.txt
+
+aborpe@LIN19006294 MINGW64 ~/Assignments (master)
+$ git merge html-assignments
+Already up to date.
+
+aborpe@LIN19006294 MINGW64 ~/Assignments (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        local vcs.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+aborpe@LIN19006294 MINGW64 ~/Assignments (master)
+$ git log
+commit cd8251b12fe508537fced3fa6a11c62cf6253a5e (HEAD -> master, html-assignments, css-assignments)
+Author: Borpe <anuradha.borpe@capgemini.com>
+Date:   Thu Jan 20 16:18:37 2022 +0530
+
+    create readme text file
+
+aborpe@LIN19006294 MINGW64 ~/Assignments (master)
+$ git branch -d html-assignments
+Deleted branch html-assignments (was cd8251b).
+
+aborpe@LIN19006294 MINGW64 ~/Assignments (master)
+$

@@ -1,0 +1,85 @@
+aborpe@LIN19006294 MINGW64 ~/Assignments (master)
+$ git checkout -b css-assignments
+fatal: A branch named 'css-assignments' already exists.
+
+aborpe@LIN19006294 MINGW64 ~/Assignments (master)
+$ git show css-assignments:C:\Users\ABORPE\Assignments
+fatal: path 'C:UsersABORPEAssignments' does not exist in 'css-assignments'
+
+aborpe@LIN19006294 MINGW64 ~/Assignments (master)
+$ git show css-assignments:C:/Users/ABORPE/Assignments
+fatal: path 'C:/Users/ABORPE/Assignments' exists on disk, but not in 'css-assignments'
+
+aborpe@LIN19006294 MINGW64 ~/Assignments (master)
+$ git show css-assignments: /C/Users/ABORPE/Assignments
+tree css-assignments:
+
+README.txt
+
+aborpe@LIN19006294 MINGW64 ~/Assignments (master)
+$ git commit -m "change commited to css-assignments"
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        local vcs.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+aborpe@LIN19006294 MINGW64 ~/Assignments (master)
+$ git checkout master
+Already on 'master'
+M       README.txt
+
+aborpe@LIN19006294 MINGW64 ~/Assignments (master)
+$ git commit -m "updated changes"
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        local vcs.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+aborpe@LIN19006294 MINGW64 ~/Assignments (master)
+$ git checkout css-assignments
+Switched to branch 'css-assignments'
+M       README.txt
+
+aborpe@LIN19006294 MINGW64 ~/Assignments (css-assignments)
+$ git commit -m "changes to current branch"
+On branch css-assignments
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        local vcs.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+aborpe@LIN19006294 MINGW64 ~/Assignments (css-assignments)
+$ git checkout master
+Switched to branch 'master'
+M       README.txt
+
+aborpe@LIN19006294 MINGW64 ~/Assignments (master)
+$ git merge css-assignments
+Already up to date.
+
+aborpe@LIN19006294 MINGW64 ~/Assignments (master)
+$ git branch -d css-assignments
+Deleted branch css-assignments (was cd8251b).
+
+aborpe@LIN19006294 MINGW64 ~/Assignments (master)
+$

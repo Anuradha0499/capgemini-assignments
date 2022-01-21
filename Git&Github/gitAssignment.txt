@@ -1,0 +1,323 @@
+
+aborpe@LIN19006294 MINGW64 ~ (master)
+$ mkdir project_dir1
+
+aborpe@LIN19006294 MINGW64 ~ (master)
+$ cd project_dir1
+
+aborpe@LIN19006294 MINGW64 ~/project_dir1 (master)
+$ git init
+Initialized empty Git repository in C:/Users/ABORPE/project_dir1/.git/
+
+aborpe@LIN19006294 MINGW64 ~/project_dir1 (master)
+$ git add index.html
+
+aborpe@LIN19006294 MINGW64 ~/project_dir1 (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   index.html
+
+
+aborpe@LIN19006294 MINGW64 ~/project_dir1 (master)
+$ git commit -m "added index file"
+[master (root-commit) 312808e] added index file
+ Committer: Borpe <anuradha.borpe@capgemini.com>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+)
+ create mode 100644 index.html
+
+aborpe@LIN19006294 MINGW64 ~/project_dir1 (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        info.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+aborpe@LIN19006294 MINGW64 ~/project_dir1 (master)
+$ touch .gitignore
+
+aborpe@LIN19006294 MINGW64 ~/project_dir1 (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        info.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+aborpe@LIN19006294 MINGW64 ~/project_dir1 (master)
+$ git commit -m "updated index file"
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        info.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+aborpe@LIN19006294 MINGW64 ~/project_dir1 (master)
+$ git log --all --decorate --oneline --graph
+* 312808e (HEAD -> master) added index file
+
+aborpe@LIN19006294 MINGW64 ~/project_dir1 (master)
+$ git log
+commit 312808e55fd802c25bc74494bf19323a39d52b0c (HEAD -> master)
+Author: Borpe <anuradha.borpe@capgemini.com>
+Date:   Thu Jan 20 15:28:57 2022 +0530
+
+    added index file
+
+aborpe@LIN19006294 MINGW64 ~/project_dir1 (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        info.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+aborpe@LIN19006294 MINGW64 ~/project_dir1 (master)
+$ git add index.html
+
+aborpe@LIN19006294 MINGW64 ~/project_dir1 (master)
+$ git commit -m "reverting changes"
+[master d6e626c] reverting changes
+ Committer: Borpe <anuradha.borpe@capgemini.com>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+aborpe@LIN19006294 MINGW64 ~/project_dir1 (master)
+$ git checkout --index.html
+error: unknown option `index.html'
+usage: git checkout [<options>] <branch>
+   or: git checkout [<options>] [<branch>] -- <file>...
+
+    -b <branch>           create and checkout a new branch
+    -B <branch>           create/reset and checkout a branch
+    -l                    create reflog for new branch
+    --guess               second guess 'git checkout <no-such-branch>' (default)
+    --overlay             use overlay mode (default)
+    -q, --quiet           suppress progress reporting
+    --recurse-submodules[=<checkout>]
+                          control recursive updating of submodules
+    --progress            force progress reporting
+    -m, --merge           perform a 3-way merge with the new branch
+    --conflict <style>    conflict style (merge or diff3)
+    -d, --detach          detach HEAD at named commit
+    -t, --track           set upstream info for new branch
+    -f, --force           force checkout (throw away local modifications)
+    --orphan <new-branch>
+                          new unparented branch
+    --overwrite-ignore    update ignored files (default)
+    --ignore-other-worktrees
+                          do not check if another worktree is holding the given ref
+    -2, --ours            checkout our version for unmerged files
+    -3, --theirs          checkout their version for unmerged files
+    -p, --patch           select hunks interactively
+    --ignore-skip-worktree-bits
+                          do not limit pathspecs to sparse entries only
+    --pathspec-from-file <file>
+                          read pathspec from file
+    --pathspec-file-nul   with --pathspec-from-file, pathspec elements are separated with NUL character
+
+
+aborpe@LIN19006294 MINGW64 ~/project_dir1 (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        info.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+aborpe@LIN19006294 MINGW64 ~/project_dir1 (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        info.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+aborpe@LIN19006294 MINGW64 ~/project_dir1 (master)
+$ git checkout --index.html
+error: unknown option `index.html'
+usage: git checkout [<options>] <branch>
+   or: git checkout [<options>] [<branch>] -- <file>...
+
+    -b <branch>           create and checkout a new branch
+    -B <branch>           create/reset and checkout a branch
+    -l                    create reflog for new branch
+    --guess               second guess 'git checkout <no-such-branch>' (default)
+    --overlay             use overlay mode (default)
+    -q, --quiet           suppress progress reporting
+    --recurse-submodules[=<checkout>]
+                          control recursive updating of submodules
+    --progress            force progress reporting
+    -m, --merge           perform a 3-way merge with the new branch
+    --conflict <style>    conflict style (merge or diff3)
+    -d, --detach          detach HEAD at named commit
+    -t, --track           set upstream info for new branch
+    -f, --force           force checkout (throw away local modifications)
+    --orphan <new-branch>
+                          new unparented branch
+    --overwrite-ignore    update ignored files (default)
+    --ignore-other-worktrees
+                          do not check if another worktree is holding the given ref
+    -2, --ours            checkout our version for unmerged files
+    -3, --theirs          checkout their version for unmerged files
+    -p, --patch           select hunks interactively
+    --ignore-skip-worktree-bits
+                          do not limit pathspecs to sparse entries only
+    --pathspec-from-file <file>
+                          read pathspec from file
+    --pathspec-file-nul   with --pathspec-from-file, pathspec elements are separated with NUL character
+
+
+aborpe@LIN19006294 MINGW64 ~/project_dir1 (master)
+$ git checkout --.
+error: unknown option `.'
+usage: git checkout [<options>] <branch>
+   or: git checkout [<options>] [<branch>] -- <file>...
+
+    -b <branch>           create and checkout a new branch
+    -B <branch>           create/reset and checkout a branch
+    -l                    create reflog for new branch
+    --guess               second guess 'git checkout <no-such-branch>' (default)
+    --overlay             use overlay mode (default)
+    -q, --quiet           suppress progress reporting
+    --recurse-submodules[=<checkout>]
+                          control recursive updating of submodules
+    --progress            force progress reporting
+    -m, --merge           perform a 3-way merge with the new branch
+    --conflict <style>    conflict style (merge or diff3)
+    -d, --detach          detach HEAD at named commit
+    -t, --track           set upstream info for new branch
+    -f, --force           force checkout (throw away local modifications)
+    --orphan <new-branch>
+                          new unparented branch
+    --overwrite-ignore    update ignored files (default)
+    --ignore-other-worktrees
+                          do not check if another worktree is holding the given ref
+    -2, --ours            checkout our version for unmerged files
+    -3, --theirs          checkout their version for unmerged files
+    -p, --patch           select hunks interactively
+    --ignore-skip-worktree-bits
+                          do not limit pathspecs to sparse entries only
+    --pathspec-from-file <file>
+                          read pathspec from file
+    --pathspec-file-nul   with --pathspec-from-file, pathspec elements are separated with NUL character
+
+
+aborpe@LIN19006294 MINGW64 ~/project_dir1 (master)
+$ git config --global alias.my-add add
+
+aborpe@LIN19006294 MINGW64 ~/project_dir1 (master)
+$ git my-add index.html
+
+aborpe@LIN19006294 MINGW64 ~/project_dir1 (master)
+$ git commit -m "index file after renaming add"
+[master 055d234] index file after renaming add
+ Committer: Borpe <anuradha.borpe@capgemini.com>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+aborpe@LIN19006294 MINGW64 ~/project_dir1 (master)
+$ git log
+commit 055d234b8d8918816e1d06ef3e8411111703a8c5 (HEAD -> master)
+Author: Borpe <anuradha.borpe@capgemini.com>
+Date:   Thu Jan 20 16:02:23 2022 +0530
+
+    index file after renaming add
+
+commit d6e626cd183af791f4000343f82d18ef7e1299aa
+Author: Borpe <anuradha.borpe@capgemini.com>
+Date:   Thu Jan 20 15:44:11 2022 +0530
+
+    reverting changes
+
+commit 312808e55fd802c25bc74494bf19323a39d52b0c
+Author: Borpe <anuradha.borpe@capgemini.com>
+Date:   Thu Jan 20 15:28:57 2022 +0530
+
+    added index file
+
+aborpe@LIN19006294 MINGW64 ~/project_dir1 (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        info.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+aborpe@LIN19006294 MINGW64 ~/project_dir1 (master)

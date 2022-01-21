@@ -1,0 +1,85 @@
+aborpe@LIN19006294 MINGW64 ~/Assignments (master)
+$ ls
+ README.txt  'local vcs.txt'
+
+aborpe@LIN19006294 MINGW64 ~/Assignments (master)
+$ git commit -m "commiting README text file"
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        local vcs.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+aborpe@LIN19006294 MINGW64 ~/Assignments (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        local vcs.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+aborpe@LIN19006294 MINGW64 ~/Assignments (master)
+$ git log
+commit cd8251b12fe508537fced3fa6a11c62cf6253a5e (HEAD -> master)
+Author: Borpe <anuradha.borpe@capgemini.com>
+Date:   Thu Jan 20 16:18:37 2022 +0530
+
+    create readme text file
+
+aborpe@LIN19006294 MINGW64 ~/Assignments (master)
+$ git push
+fatal: No configured push destination.
+Either specify the URL from the command-line or configure a remote repository using
+
+    git remote add <name> <url>
+
+and then push using the remote name
+
+    git push <name>
+
+
+aborpe@LIN19006294 MINGW64 ~/Assignments (master)
+$ git remote add Assignments https://github.com/Anuradha0499/fresherBatch.git
+
+aborpe@LIN19006294 MINGW64 ~/Assignments (master)
+$ git remote add origin https://github.com/Anuradha0499/fresherBatch.git
+
+aborpe@LIN19006294 MINGW64 ~/Assignments (master)
+$ git branch -M main
+
+aborpe@LIN19006294 MINGW64 ~/Assignments (main)
+$ git push -u Assignments main
+To https://github.com/Anuradha0499/fresherBatch.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/Anuradha0499/fresherBatch.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+aborpe@LIN19006294 MINGW64 ~/Assignments (main)
+$ git branch -M main
+
+aborpe@LIN19006294 MINGW64 ~/Assignments (main)
+$ git push -u README.txt main
+fatal: invalid gitfile format: README.txt
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+aborpe@LIN19006294 MINGW64 ~/Assignments (main)
+$
